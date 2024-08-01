@@ -1,0 +1,50 @@
+﻿@model Group
+
+<div class="container">
+
+    <h1 class="my-4">
+        <small>Group information</small>
+    </h1>
+
+    <div class="row">
+
+        <div class="col-md-8">
+            <img class="img-fluid" src="https://th.bing.com/th/id/R.002f5facdd6a1679fe236242c9c37c7f?rik=okrFlTNpmCdZ2w&pid=ImgRaw&r=0" alt="">
+        </div>
+
+        <div class="col-md-4">
+            <h3 class="my-3">@Model.Name</h3>
+            <p>@Model.Course.Name</p>
+            <p>@Model.Course.Description</p>
+        </div>
+
+    </div>
+
+    <h3 class="my-4">Group students</h3>
+
+    <div class="album py-5 bg-body-tertiary">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                @foreach (var item in Model.Students)
+                {
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img class="bd-placeholder-img card-img-top" src="https://th.bing.com/th/id/R.002f5facdd6a1679fe236242c9c37c7f?rik=okrFlTNpmCdZ2w&pid=ImgRaw&r=0" width="100%" height="225" alt="Card image cap">
+                            <div class="card-body">
+                                <p class="card-text">@item.FirstName @item.LastName</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <a type="btn btn-success" asp-controller="student" asp-action="detail" asp-route-id="@item.StudentId" class="btn btn-sm btn-outline-secondary">View</a>
+                                        <a type="btn btn-success" asp-controller="student" asp-action="edit" asp-route-id="@item.StudentId" class="btn btn-sm btn-outline-secondary">Edit</a>
+                                        <a type="btn btn-success" asp-controller="student" asp-action="delete" asp-route-id="@item.StudentId" class="btn btn-sm btn-outline-secondary">Delete</a>
+                                    </div>
+                                    <small class="text-body-secondary">@item.Group.Name</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

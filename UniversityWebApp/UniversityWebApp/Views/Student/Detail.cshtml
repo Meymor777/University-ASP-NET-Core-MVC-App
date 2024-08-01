@@ -1,0 +1,21 @@
+﻿@model Student
+
+<div class="container">
+
+    <h1 class="my-4">
+        <small>Student information</small>
+    </h1>
+
+    <div class="row">
+
+        <div class="col-md-8">
+            <img class="img-fluid" src="https://th.bing.com/th/id/R.002f5facdd6a1679fe236242c9c37c7f?rik=okrFlTNpmCdZ2w&pid=ImgRaw&r=0" alt="">
+        </div>
+
+        <div class="col-md-4">
+            <h3 class="my-3">@Model.FirstName @Model.LastName</h3>
+            <p>@Model.Group.Course.Name (@Model.Group.Name)</p>
+            <p>@Model.Group.Course.Description</p>
+        </div>
+
+    </div>

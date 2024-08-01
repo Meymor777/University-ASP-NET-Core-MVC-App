@@ -1,0 +1,29 @@
+﻿@using UniversityWebApp.ViewModels
+@model Student
+
+<h1>Are you sure you want to delete this student?</h1>
+
+<form method="post" asp-action="Edit" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="FirstName">First name</label>
+        <input asp-for="FirstName" class="form-control">
+        <span asp-validation-for="FirstName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="LastName">Last name</label>
+        <input asp-for="LastName" class="form-control">
+        <span asp-validation-for="LastName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Group">Group</label>
+        <input asp-for="Group" class="form-control">
+        <span asp-validation-for="Group" class="text-danger"></span>
+    </div>
+</form>
+
+<div class="form-group">
+    <form action="Delete" method="post">
+        <input type="hidden" asp-for="StudentId" />
+        <input type="submit" value="Confirm" class="btn btn-danger float-right mt-3" />
+    </form>
+</div>

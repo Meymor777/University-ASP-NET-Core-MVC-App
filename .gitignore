@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/UniversityWebApp/.vs
+/UniversityWebApp/UniversityWebApp/bin/Debug/net8.0
+/UniversityWebApp/UniversityWebApp/obj
+/UniversityWebApp/UniversityWebApp.Test/UniversityWebApp.Test/bin/Debug/net8.0
+/UniversityWebApp/UniversityWebApp.Test/UniversityWebApp.Test/obj
